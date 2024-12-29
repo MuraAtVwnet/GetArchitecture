@@ -9,8 +9,9 @@
 	[UInt16] 12 = "ARM64"
 }
 
-$ArchitectureID = (Get-WmiObject Win32_Processor).Architecture
-$CPUName = "CPU Name : " + @((Get-WmiObject Win32_Processor).Name)[0]
+$WMI = Get-WmiObject Win32_Processor
+$ArchitectureID = $WMI.Architecture
+$CPUName = "CPU Name : " + @($WMI.Name)[0]
 
 $ArchitectureName = $Architectures[$ArchitectureID]
 
