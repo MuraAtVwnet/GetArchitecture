@@ -19,4 +19,6 @@ if( $ArchitectureName -ne $null ){
 	$Message = "Unknown Architecture ID : " + $ArchitectureID
 }
 
+Write-Output ""
 Write-Output $Message
+Write-Output ""
