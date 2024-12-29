@@ -10,15 +10,17 @@
 }
 
 $ArchitectureID = (Get-WmiObject Win32_Processor).Architecture
+$CPUName = "CPU Name : " + @((Get-WmiObject Win32_Processor).Name)[0]
 
 $ArchitectureName = $Architectures[$ArchitectureID]
 
 if( $ArchitectureName -ne $null ){
-	$Message = "Architecture : " + $ArchitectureName
+	$Architecture = "Architecture : " + $ArchitectureName
 } else {
-	$Message = "Unknown Architecture ID : " + $ArchitectureID
+	$Architecture = "Unknown Architecture ID : " + $ArchitectureID
 }
 
 Write-Output ""
-Write-Output $Message
+Write-Output $Architecture
+Write-Output $CPUName
 Write-Output ""
