@@ -4,7 +4,7 @@
 	[UInt16] 2 = "Alpha"
 	[UInt16] 3 = "PowerPC"
 	[UInt16] 5 = "ARM"
-	[UInt16] 6 = "IA64"
+	[UInt16] 6 = "IA64(Itanium)"
 	[UInt16] 9 = "x64"
 	[UInt16] 12 = "ARM64"
 }

@@ -11,7 +11,7 @@
     Alpha
     PowerPC
     ARM
-    IA64
+    IA64(Itanium)
     x64
     ARM64
 
