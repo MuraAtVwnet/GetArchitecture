@@ -11,14 +11,23 @@
 
 $WMI = Get-WmiObject Win32_Processor
 $ArchitectureID = $WMI.Architecture
-$CPUName = "CPU Name : " + @($WMI.Name)[0]
+$CPUNameString = @($WMI.Name)[0]
 
-$ArchitectureName = $Architectures[$ArchitectureID]
+if( $ArchitectureID -ne $null ){
+	$ArchitectureName = $Architectures[$ArchitectureID]
+	if( $ArchitectureName -ne $null ){
+		$Architecture = "Architecture : " + $ArchitectureName
+	}
+	else {
+		$Architecture = "Unknown Architecture ID : " + $ArchitectureID
+	}
+}
+else{
+	$Architecture = "Unknown Architecture"
+}
 
-if( $ArchitectureName -ne $null ){
-	$Architecture = "Architecture : " + $ArchitectureName
-} else {
-	$Architecture = "Unknown Architecture ID : " + $ArchitectureID
+if( $CPUNameString -ne $null ){
+	$CPUName = "CPU Name : " + $CPUNameString
 }
 
 Write-Output ""
